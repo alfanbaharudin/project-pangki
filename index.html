@@ -15,12 +15,24 @@
 			background-attachment: fixed;
 			background-position: center top; 
 			background-size: 100% 100%;
+			padding-bottom: 5px;    
+		}
+		h5, h6 {
+			font-size: 15px!important;
 		}
 		.content1 {
 			background-color: #C0C8F1;
+			padding-bottom: 9px;
+			padding-top: 9px;
 		}
 		.img-fluid {
 			width: 100%;
+		}
+		@media only screen and (min-width: 576px) {
+			.content1 {
+				padding-bottom: 15px;
+				padding-top: 15px;
+			}
 		}
 		@media only screen and (min-width: 576px) {
 			.jumbotron {
@@ -39,92 +51,24 @@
 	</style>
 </head>
 <body>
-	<!-- h1{
-		text-align: center;
-	}
-	audio {
-		padding-bottom: 20px;
-	}
-	@media screen and (max-width: 390px) {
-		h1{
-			padding-bottom: 20px;
-		}
-	}
-	@media screen and (min-width: 390px) {
-		li {
-			font-size: 150%;
-		}
-	} -->
-	<div class="jumbotron text-center font-weight-bold content1">
-		<!-- <span data-audio-url="sound/header.mp3" style="cursor: pointer;"> -->
-		<h5 class="text-uppercase text-center">Edukasi Kesehatan Gigi dan Mulut Pada Anak Tunanetra</h5>
-		<!-- </span> -->
-	</div>
-	<img src="img/bg-core.png" class="img-fluid" alt="Responsive image" style="opacity: 0.70;">
+	<span data-audio-url="sound/header.mp3" style="cursor: pointer;">
+		<div class="text-center font-weight-bold content1">
+				Edukasi Kesehatan Gigi dan Mulut Pada Anak Tunanetra
+		</div>
+	</span>
+	<img src="img/bg-core.png" class="img-fluid hide-img" alt="Responsive image" style="opacity: 0.70;">
 	<div class="container pt-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: brown; width: 210px;"><span data-audio-url="sound/hal1.mp3" style="cursor: pointer;"><h6>Halaman 1</h6></span></div>
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: lightblue; width: 210px;"><span data-audio-url="sound/hal1.mp3" style="cursor: pointer;"><h6>Makanan Yang Sehat Untuk Gigi Mu</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #F6EBE9;"><span data-audio-url="sound/hal1.mp3" style="cursor: pointer;"><h6>Halaman 1</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #D8A9A9;"><span data-audio-url="sound/hal1.mp3" style="cursor: pointer;"><h6>Makanan Yang Sehat Untuk Gigi Mu</h6></span></div>
 	</div>
 	<div class="container pt-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: brown; width: 210px;"><span data-audio-url="sound/hal2.mp3" style="cursor: pointer;"><h6>Halaman 2</h6></span></div>
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: lightblue; width: 210px;"><span data-audio-url="sound/hal2.mp3" style="cursor: pointer;"><h6>Makanan Yang Merusak Gigi Mu</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #C7CCFD;"><span data-audio-url="sound/hal2.mp3" style="cursor: pointer;"><h6>Halaman 2</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/hal2.mp3" style="cursor: pointer;"><h6>Makanan Yang Merusak Gigi Mu</h6></span></div>
 	</div>
 	<div class="container pt-5 pb-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: brown; width: 210px;"><span data-audio-url="sound/hal3.mp3" style="cursor: pointer;"><h6>Halaman 3</h6></span></div>
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: lightblue; width: 210px;"><span data-audio-url="sound/hal3.mp3" style="cursor: pointer;"><h6>Teknik Menggosok Gigi Mu</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #F5F5F5;"><span data-audio-url="sound/hal3.mp3" style="cursor: pointer;"><h6>Halaman 3</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #A6A6A6;"><span data-audio-url="sound/hal3.mp3" style="cursor: pointer;"><h6>Teknik Menggosok Gigi Mu</h6></span></div>
 	</div>
-	<img src="img/footer.png" class="img-fluid" alt="Responsive image">
-	<footer>
-		<p class="text-center text-muted" style="margin-top: 1rem!important;">© 2022 HM_Project</p>
-	</footer>
-	<!-- <h1 class="text-uppercase">===============================================</h1>
-	<h1 class="text-uppercase">Teknik Menggosok Gigi</h1>
-	<ul>
-		<li>Langkah Pertama</li>
-		<audio controls controlsList="nodownload">
-			<source src="https://www.computerhope.com/jargon/m/example.mp3" />
-		</audio>
-		<li>Langkah Kedua</li>
-		<audio controls controlsList="nodownload">
-			<source src="myAudio.mp3" type="audio/mpeg" />
-			<source src="myAudio.ogg" type="audio/ogg" />
-		</audio>
-		<li>Langkah Ketiga</li>
-		<audio controls controlsList="nodownload">
-			<source src="myAudio.mp3" type="audio/mpeg" />
-			<source src="myAudio.ogg" type="audio/ogg" />
-		</audio>
-		<li>Langkah Keempat</li>
-		<audio controls controlsList="nodownload">
-			<source src="myAudio.mp3" type="audio/mpeg" />
-			<source src="myAudio.ogg" type="audio/ogg" />
-		</audio>
-		<li>Langkah Kelima</li>
-		<audio controls controlsList="nodownload">
-			<source src="myAudio.mp3" type="audio/mpeg" />
-			<source src="myAudio.ogg" type="audio/ogg" />
-		</audio>
-		<li>Langkah Keenam</li>
-		<audio controls controlsList="nodownload">
-			<source src="myAudio.mp3" type="audio/mpeg" />
-			<source src="myAudio.ogg" type="audio/ogg" />
-		</audio>
-		<li>Langkah Ketujuh</li>
-		<audio controls controlsList="nodownload">
-			<source src="myAudio.mp3" type="audio/mpeg" />
-			<source src="myAudio.ogg" type="audio/ogg" />
-		</audio>
-		<li>Langkah Kedelapan</li>
-		<audio controls controlsList="nodownload">
-			<source src="myAudio.mp3" type="audio/mpeg" />
-			<source src="myAudio.ogg" type="audio/ogg" />
-		</audio>
-		<li>Langkah Kesembilan</li>
-		<audio controls controlsList="nodownload">
-			<source src="myAudio.mp3" type="audio/mpeg" />
-			<source src="myAudio.ogg" type="audio/ogg" />
-		</audio>
-	</ul> -->
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
