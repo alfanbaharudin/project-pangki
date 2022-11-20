@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 	<style type="text/css">
 		body {
 			font-family: 'Inter', sans-serif;
-			background-image: url('img/bg-index.png');
+			background-image: url('img/bg-makanan.png');
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-position: center top; 
@@ -53,21 +54,25 @@
 <body>
 	<span data-audio-url="sound/header.mp3" style="cursor: pointer;">
 		<div class="text-center font-weight-bold content1">
-				Edukasi Kesehatan Gigi dan Mulut Pada Anak Tunanetra
+			Edukasi Kesehatan Gigi dan Mulut Pada Anak Tunanetra
 		</div>
 	</span>
 	<img src="img/bg-core.png" class="img-fluid hide-img" alt="Responsive image" style="opacity: 0.70;">
 	<div class="container pt-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #F6EBE9;"><span data-audio-url="sound/hal1.mp3" style="cursor: pointer;"><h6>Halaman 1</h6></span></div>
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #D8A9A9;"><span id="href1" style="cursor: pointer;"><h6>Makanan Yang Sehat Untuk Gigi Mu</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/teknik.mp3" style="cursor: pointer;"><h6>Teknik Menggosok Gigi</h6></span></div>
 	</div>
 	<div class="container pt-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #C7CCFD;"><span data-audio-url="sound/hal2.mp3" style="cursor: pointer;"><h6>Halaman 2</h6></span></div>
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span id="href2" style="cursor: pointer;"><h6>Makanan Yang Merusak Gigi Mu</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/langkah-1.mp3" style="cursor: pointer;"><h6>Langkah 1</h6></span></div>
+	</div>
+	<div class="container pt-5">
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/langkah-2.mp3" style="cursor: pointer;"><h6>Langkah 2</h6></span></div>
 	</div>
 	<div class="container pt-5 pb-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #F5F5F5;"><span data-audio-url="sound/hal3.mp3" style="cursor: pointer;"><h6>Halaman 3</h6></span></div>
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #A6A6A6;"><span id="href3" style="cursor: pointer;"><h6>Teknik Menggosok Gigi Mu</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/langkah-3.mp3" style="cursor: pointer;"><h6>Langkah 3</h6></span></div>
+	</div>
+	<div class="container d-flex">
+		<div class="mr-auto p-2"><button class="btn btn-danger btn-lg" id="kembali" style="opacity: 0.70;">Kembali</button></div>
+		<div class="p-2"><button class="btn btn-success btn-lg" id="lanjut" style="opacity: 0.70;">Lanjut</button></div>
 	</div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -82,70 +87,48 @@
 			});
 		}
 	);
-	var href1 = document.getElementById('href1');
+    var kembali = document.getElementById('kembali');
 	function singleClick1() {
-		var a = new Audio('sound/hal1.mp3');
+		var a = new Audio('sound/kembali.mp3');
 		a.play();
 	}
 	function doubleClick1() {
-		window.location.href = 'makanan-baik.html';
+		window.location.href = 'makanan-rusak.html';
 	}
 	var clickCount1 = 0;
-	href1.addEventListener('click', function() {
+	kembali.addEventListener('click', function() {
 		clickCount1++;
 		if (clickCount1 === 1) {
 			singleClick1Timer = setTimeout(function() {
 				clickCount1 = 0;
 				singleClick1();
-			}, 1000);
+			}, 500);
 		} else if (clickCount1 === 2) {
 			clearTimeout(singleClick1Timer);
 			clickCount1 = 0;
 			doubleClick1();
 		}
 	}, false);
-	var href2 = document.getElementById('href2');
+	var lanjut = document.getElementById('lanjut');
 	function singleClick2() {
-		var a = new Audio('sound/hal2.mp3');
+		var a = new Audio('sound/lanjut.mp3');
 		a.play();
 	}
 	function doubleClick2() {
-		window.location.href = 'makanan-rusak.html';
+		window.location.href = 'teknik-2.html';
 	}
 	var clickCount2 = 0;
-	href2.addEventListener('click', function() {
+	lanjut.addEventListener('click', function() {
 		clickCount2++;
 		if (clickCount2 === 1) {
 			singleClick2Timer = setTimeout(function() {
 				clickCount2 = 0;
 				singleClick2();
-			}, 1000);
+			}, 500);
 		} else if (clickCount2 === 2) {
 			clearTimeout(singleClick2Timer);
 			clickCount2 = 0;
 			doubleClick2();
-		}
-	}, false);
-	var href3 = document.getElementById('href3');
-	function singleClick3() {
-		var a = new Audio('sound/hal3.mp3');
-		a.play();
-	}
-	function doubleClick3() {
-		window.location.href = 'teknik-1.html';
-	}
-	var clickCount3 = 0;
-	href3.addEventListener('click', function() {
-		clickCount3++;
-		if (clickCount3 === 1) {
-			singleClick3Timer = setTimeout(function() {
-				clickCount3 = 0;
-				singleClick3();
-			}, 1000);
-		} else if (clickCount3 === 2) {
-			clearTimeout(singleClick3Timer);
-			clickCount3 = 0;
-			doubleClick3();
 		}
 	}, false);
 </script>
