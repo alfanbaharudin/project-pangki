@@ -28,6 +28,9 @@
 		.img-fluid {
 			width: 100%;
 		}
+		.btn-lg {
+			padding: 1rem 1.5rem!important;
+		}
 		@media only screen and (min-width: 576px) {
 			.content1 {
 				padding-bottom: 15px;
@@ -100,7 +103,7 @@
 			singleClick1Timer = setTimeout(function() {
 				clickCount1 = 0;
 				singleClick1();
-			}, 500);
+			}, 1000);
 		} else if (clickCount1 === 2) {
 			clearTimeout(singleClick1Timer);
 			clickCount1 = 0;
@@ -122,7 +125,7 @@
 			singleClick2Timer = setTimeout(function() {
 				clickCount2 = 0;
 				singleClick2();
-			}, 500);
+			}, 1000);
 		} else if (clickCount2 === 2) {
 			clearTimeout(singleClick2Timer);
 			clickCount2 = 0;
