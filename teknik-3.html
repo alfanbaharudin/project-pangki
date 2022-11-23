@@ -55,41 +55,47 @@
 	</style>
 </head>
 <body>
-	<span data-audio-url="sound/header.mp3" style="cursor: pointer;">
+	<span id="sound/header.mp3" onclick="playSound(this)" style="cursor: pointer;">
 		<div class="text-center font-weight-bold content1">
 			Edukasi Kesehatan Gigi dan Mulut Pada Anak Tunanetra
 		</div>
 	</span>
 	<img src="img/bg-core.png" class="img-fluid hide-img" alt="Responsive image" style="opacity: 0.70;">
 	<div class="container pt-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/teknik.mp3" style="cursor: pointer;"><h6>Teknik Menggosok Gigi</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span id="sound/teknik.mp4" onclick="playSound(this)" style="cursor: pointer;"><h6>Teknik Menggosok Gigi</h6></span></div>
 	</div>
 	<div class="container pt-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/langkah-7.mp3" style="cursor: pointer;"><h6>Langkah 7</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span id="sound/langkah-7.mp4" onclick="playSound(this)" style="cursor: pointer;"><h6>Langkah 7</h6></span></div>
+		<audio class="mt-4" controls style="width:100%!important" controlsList="noplaybackrate nodownload nofullscreen">
+			<source src="sound/langkah-7.mp4" />
+		</audio>
 	</div>
 	<div class="container pt-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/langkah-8.mp3" style="cursor: pointer;"><h6>Langkah 8</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span id="sound/langkah-8.mp4" onclick="playSound(this)" style="cursor: pointer;"><h6>Langkah 8</h6></span></div>
+		<audio class="mt-4" controls style="width:100%!important" controlsList="noplaybackrate nodownload nofullscreen">
+			<source src="sound/langkah-8.mp4" />
+		</audio>
 	</div>
 	<div class="container pt-5 pb-5">
-		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span data-audio-url="sound/langkah-9.mp3" style="cursor: pointer;"><h6>Langkah 9</h6></span></div>
+		<div class="border-0 pl-5 pb-3 pt-3 pr-5 text-center" style="background-color: #DDECFA;"><span id="sound/langkah-9.mp4" onclick="playSound(this)" style="cursor: pointer;"><h6>Langkah 9</h6></span></div>
+		<audio class="mt-4" controls style="width:100%!important" controlsList="noplaybackrate nodownload nofullscreen">
+			<source src="sound/langkah-9.mp4" />
+		</audio>
 	</div>
-	<div class="container d-flex">
+	<div class="container d-flex justify-content-between">
 		<div class="mr-auto p-2"><button class="btn btn-danger btn-lg" id="kembali" style="opacity: 0.70;">Kembali</button></div>
+		<div class="p-2"><button class="btn btn-primary btn-lg" id="utama" style="opacity: 0.70;">Utama</button></div>
 		<div class="p-2"><button class="btn btn-success btn-lg" id="lanjut" style="opacity: 0.70;">Lanjut</button></div>
 	</div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
-	$("[data-audio-url]").each(
-		function(){
-			$(this).on('click', function() {
-				var mp3Url = $(this).attr('data-audio-url');
-				var a = new Audio(mp3Url);
-				a.play();
-			});
-		}
-	);
+	var globalaudio = new Audio();
+	function playSound (e) {
+		globalaudio.src= e.id;
+		globalaudio.play();
+	}
     var kembali = document.getElementById('kembali');
 	function singleClick1() {
 		var a = new Audio('sound/kembali.mp3');
@@ -132,6 +138,28 @@
 			clearTimeout(singleClick2Timer);
 			clickCount2 = 0;
 			doubleClick2();
+		}
+	}, false);
+	var utama = document.getElementById('utama');
+	function singleClick3() {
+		var a = new Audio('sound/utama.mp3');
+		a.play();
+	}
+	function doubleClick3() {
+		window.location.href = 'index.html';
+	}
+	var clickCount3 = 0;
+	utama.addEventListener('click', function() {
+		clickCount3++;
+		if (clickCount3 === 1) {
+			singleClick3Timer = setTimeout(function() {
+				clickCount3 = 0;
+				singleClick3();
+			}, 1000);
+		} else if (clickCount3 === 2) {
+			clearTimeout(singleClick3Timer);
+			clickCount3 = 0;
+			doubleClick3();
 		}
 	}, false);
 </script>
